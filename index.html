@@ -1,0 +1,664 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Naman Jain - AI Engineer & Data Analyst Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Naman Jain's professional portfolio showcasing projects in AI engineering and data analytics." />
+    <meta name="keywords" content="Naman Jain, AI Engineer, Data Analyst, Portfolio, Projects, Contact" />
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Naman Jain",
+      "jobTitle": "AI Engineer & Data Analytics Professional",
+      "email": "namanjain1618@gmail.com",
+      "url": "https://yourwebsite.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/naman-09bzwer2/",
+        "https://github.com/naman1618"
+      ]
+    }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+    <!-- Custom Styles -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            background: url('images/bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #333;
+        }
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #preloader .spinner {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #ff6600;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #ff6600;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            display: none;
+            z-index: 1000;
+        }
+        #back-to-top:hover {
+            background: #cc5200;
+        }
+        /* Navigation Styles */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+        #navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+        }
+        #navbar ul li {
+            display: inline;
+        }
+        #navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        #navbar ul li a:hover {
+            color: #4e54c8;
+        }
+        /* Wrapper */
+        #wrapper {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 100px;
+        }
+        /* Header */
+        #header-container {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            margin-bottom: 50px;
+        }
+        #header-container h1 {
+            font-size: 4em;
+            margin: 20px 0 10px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #header-container p {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        #header-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 20px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        /* Icons */
+        ul.icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        ul.icons li {
+            display: inline-block;
+        }
+        ul.icons a {
+            color: #fff;
+            font-size: 2em;
+            transition: color 0.3s, transform 0.3s;
+        }
+        ul.icons a:hover {
+            color: #ffcc00;
+            transform: scale(1.1);
+        }
+        /* Projects */
+        #projects {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+        article {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+        }
+        article header h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        article p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #555;
+        }
+        article ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        article ul li {
+            margin-bottom: 10px;
+        }
+        /* Iframe Container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Actions */
+        ul.actions {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        ul.actions li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        ul.actions a.button {
+            background: #ff6600;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+        ul.actions a.button:hover {
+            background: #cc5200;
+            transform: scale(1.05);
+        }
+        /* Timeline */
+        #timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+        #timeline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ccc;
+        }
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            margin-bottom: 30px;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: #ff6600;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        .timeline-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .timeline-item p {
+            color: #555;
+        }
+        .timeline-item .date-location {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .timeline-item .skills {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        /* Contact Section */
+        #contact {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        #contact p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        #contact a.email-button {
+            background: #ff6600;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        #contact a.email-button:hover {
+            background: #cc5200;
+            transform: scale(1.05);
+        }
+        /* Section Animations */
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            #navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            #header-container h1 {
+                font-size: 2.5em;
+            }
+            #header-container p {
+                font-size: 1.2em;
+            }
+            article {
+                padding: 30px 20px;
+            }
+            article header h2 {
+                font-size: 1.5em;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+            }
+            .timeline-item::before {
+                left: calc(50% - 10px) !important;
+            }
+            #timeline::after {
+                left: calc(50% - 1px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#header-container">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#timeline">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+        <div id="header-container" data-aos="fade-down">
+            <header>
+                <h1>Naman Jain</h1>
+                <p>AI Engineer &amp; Data Analytics Professional</p>
+                <img src="images/NamanJain1.JPG" alt="Naman Jain Photo" />
+                <ul class="icons">
+                    <li><a href="https://www.linkedin.com/in/naman-09bzwer2/" class="fab fa-linkedin" title="LinkedIn"></a></li>
+                    <li><a href="https://github.com/naman1618" class="fab fa-github" title="GitHub"></a></li>
+                </ul>
+            </header>
+        </div>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <!-- Project 1 -->
+            <article data-aos="fade-up">
+                <header>
+                    <h2>Cryptocurrency Impact on PC Components: An Interactive Dashboard</h2>
+                </header>
+                <div class="iframe-container">
+                    <iframe title="Impact of Cryptocurrencies on PC Parts" src="https://app.powerbi.com/reportEmbed?reportId=def8af03-489d-4136-8e55-11563be42302&amp;autoAuth=true&amp;ctid=5ee35505-eb8e-4929-937d-645df5013288" allowFullScreen="true"></iframe>
+                </div>
+                <p>Dive into the fascinating world of cryptocurrency's influence on the PC hardware market with this comprehensive Power BI dashboard. This project meticulously analyzes the intricate relationship between cryptocurrency price trends, focusing on major players like Bitcoin and Ethereum, and their ripple effects on GPU pricing and availability.</p>
+                <p>Key features of this dashboard include:</p>
+                <ul>
+                    <li>Real-time correlation analysis between crypto prices and GPU market dynamics</li>
+                    <li>Interactive filters for in-depth exploration of specific processors and time periods</li>
+                    <li>Visual representations of supply-demand fluctuations in the GPU market</li>
+                    <li>Predictive insights on potential market trends based on historical data</li>
+                </ul>
+                <p>This tool is invaluable for tech enthusiasts, market analysts, and decision-makers in the PC hardware industry, offering a data-driven approach to understanding and anticipating market shifts influenced by the volatile world of cryptocurrencies.</p>
+                <ul class="actions">
+                    <li><a href="https://app.powerbi.com/reportEmbed?reportId=def8af03-489d-4136-8e55-11563be42302&amp;autoAuth=true&amp;ctid=5ee35505-eb8e-4929-937d-645df5013288" class="button">Explore the Dashboard</a></li>
+                </ul>
+            </article>
+
+            <!-- Project 2 -->
+            <article data-aos="fade-up">
+                <header>
+                    <h2>Sustainable Future: Energy Efficiency and Emissions Analysis</h2>
+                </header>
+                <div class="iframe-container">
+                    <iframe title="Energy Efficiency and Emissions Analysis" src="https://public.tableau.com/views/ExploringWasteManagementandRenewableEnergyPotentialAcrossAmerica/GeographicalDistributionofLandfills?:showVizHome=no&amp;:embed=true" allowFullScreen="true"></iframe>
+                </div>
+                <p>Embark on a journey towards a greener future with this comprehensive Tableau dashboard focused on energy efficiency and emissions analysis. This powerful visualization tool provides a detailed look at the environmental landscape across different regions, offering invaluable insights for sustainability initiatives and policy-making.</p>
+                <p>Key aspects of this analysis include:</p>
+                <ul>
+                    <li>Geospatial mapping of energy consumption patterns and emission hotspots</li>
+                    <li>Comparative analysis of waste generation and recycling rates across regions</li>
+                    <li>Trend analysis of renewable energy adoption and its impact on overall emissions</li>
+                    <li>Identification of areas with high potential for sustainability improvements</li>
+                    <li>Predictive modeling for future energy efficiency scenarios</li>
+                </ul>
+                <p>This dashboard serves as a crucial resource for environmental scientists, urban planners, and policymakers, providing the data-driven insights needed to shape effective strategies for a sustainable future. By highlighting areas of concern and opportunity, it paves the way for targeted interventions and informed decision-making in the ongoing battle against climate change.</p>
+                <ul class="actions">
+                    <li><a href="https://public.tableau.com/app/profile/naman.jain7494/viz/ExploringWasteManagementandRenewableEnergyPotentialAcrossAmerica/GeographicalDistributionofLandfills" class="button">Discover Insights</a></li>
+                </ul>
+            </article>
+
+            <!-- Project 3 -->
+            <article data-aos="fade-up">
+                <header>
+                    <h2>Road Safety Revolution: Arizona Accidents Analysis 2016-2020</h2>
+                </header>
+                <div class="iframe-container">
+                    <iframe title="Accidents in Arizona 2016-2020" src="https://public.tableau.com/views/AccidentsinArizona2016_2020/AccidentsOverview?:showVizHome=no&amp;:embed=true" allowFullScreen="true"></iframe>
+                </div>
+                <p>Embark on a comprehensive journey through Arizona's traffic safety landscape with this cutting-edge Tableau dashboard. This project offers an in-depth analysis of traffic accidents across the state from 2016 to 2020, providing crucial insights for enhancing road safety and reducing accident rates.</p>
+                <p>Key features of this analysis include:</p>
+                <ul>
+                    <li>Interactive heat maps highlighting high-risk zones and accident hotspots</li>
+                    <li>Temporal analysis showing accident patterns by time of day, day of week, and seasonality</li>
+                    <li>Correlation studies between weather conditions and accident frequency</li>
+                    <li>Detailed breakdown of accident types, including DUI incidents</li>
+                    <li>Trend analysis for identifying long-term patterns and emerging risk factors</li>
+                </ul>
+                <p>This powerful tool is designed to support data-driven decision-making for traffic authorities, urban planners, and public safety officials. By providing a clear, visual representation of accident data, it enables targeted interventions, resource allocation, and policy formulation to significantly enhance road safety across Arizona.</p>
+                <ul class="actions">
+                    <li><a href="https://public.tableau.com/app/profile/naman.jain7494/viz/AccidentsinArizona2016_2020/AccidentsOverview" class="button">Analyze Safety Data</a></li>
+                </ul>
+            </article>
+
+            <!-- Project 4 -->
+            <article data-aos="fade-up">
+                <header>
+                    <h2>Revolutionary SQL Agentic RAG Chatbot: Bridging Natural Language and Databases</h2>
+                </header>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/87XOOHs_NUs" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>Step into the future of database interaction with the SQL Agentic RAG Chatbot, a groundbreaking AI-powered interface that revolutionizes how we communicate with SQL databases. This innovative project harnesses the power of advanced Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to create a seamless bridge between natural language queries and complex database operations.</p>
+                <!-- GitHub Button -->
+                <ul class="actions">
+                    <li><a href="https://github.com/naman1618/sql_agentic_rag_chatbot" class="button">View on GitHub</a></li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="timeline" data-aos="fade-up">
+            <h2>Professional Experience</h2>
+
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+                <h3>Student Software Engineer</h3>
+                <p class="date-location">Sep 2024 - Present · 2 mos<br/>The University of Arizona’s Institute for Computation &amp; Data Enabled Insight · Part-time · Tucson, Arizona, United States · Hybrid</p>
+                <p>Skills: Software Development Life Cycle (SDLC), Amazon Redshift, Databases, Jira</p>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+                <h3>AI Engineer</h3>
+                <p class="date-location">Mar 2024 - Sep 2024 · 7 mos<br/>The University of Arizona, Institute for Computation &amp; Data-Enabled Insight, AI Core · Part-time · Tucson · Hybrid</p>
+                <p>
+                    • Architected the RAG (Retrieval Augmented Generation) system using Langchain and LlamaIndex, improving data retrieval accuracy by 25% and driving strategic insights for academic and commercial applications.<br/>
+                    • Integrated LLM (Large Language Models) with customer data to drive strategic insights that influenced the university's data-driven research initiatives.<br/>
+                    • Coordinated cross-functional collaborations with IT and data science teams to deploy scalable AI solutions across AWS, Azure, and GCP, resulting in a 30% reduction in cloud infrastructure costs and enhanced application performance.<br/>
+                    • Optimized model training processes through data preprocessing and feature engineering, improving model training efficiency by 40% and reducing errors in predictive analytics.<br/>
+                    • Mentored junior engineers and interns, fostering a culture of innovation and enhancing team performance through effective communication and leadership.
+                </p>
+                <p>Skills: Microsoft Azure, Neural Networks, AWS, SDLC, NLP, LLMs, Node.js, Prompt Engineering, Cloud Computing, SQL, Amazon Redshift, Databases, Advanced Data Analytics, Python, ETL, React.js, RAG</p>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="timeline-item">
+                <h3>Data Assistant / Graduate Student Worker</h3>
+                <p class="date-location">Oct 2023 - Sep 2024 · 1 yr<br/>University of Arizona College of Medicine – Tucson · Hybrid</p>
+                <p>
+                    • Supported the values of the PHC and the University of Arizona, Department of Medicine, by demonstrating personal responsibility, respect for self and others, innovation through teamwork, dedication to caring, and excellence in customer service.<br/>
+                    • Successfully managed and uploaded monthly data for UofA HIV Programs, ensuring timely and accurate data entries.<br/>
+                    • Led initiatives for data source and maintenance optimization, streamlining processes and ensuring a 99% accuracy rate in data retrieval and reporting.<br/>
+                    • Employed various business analysis tools to optimize processes and improve asset management techniques.<br/>
+                    • Leveraged proficiency in Stata for comprehensive data analysis, visualization, and seamlessly exporting data to other databases.<br/>
+                    • Communicated complex data findings clearly to diverse stakeholders.
+                </p>
+                <p>Skills: Project Management, Data Analytics, Data Analysis, Databases, Administration, Stata</p>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="timeline-item">
+                <h3>Business Analyst</h3>
+                <p class="date-location">Oct 2021 - Apr 2023 · 1 yr 7 mos<br/>Onin Corporation (OPC) · Full-time · Hyderabad, Telangana, India · Hybrid</p>
+                <p>
+                    • Managed the product lifecycle from strategic planning to tactical execution, optimizing operations.<br/>
+                    • Conducted market research, improving product performance by 15% and exceeding competitive benchmarks.<br/>
+                    • Collaborated with cross-functional teams to define product specifications, requirements, and release timelines.<br/>
+                    • Developed marketing strategies resulting in a 25% increase in sales and customer engagement.<br/>
+                    • Coordinated with Go-To-Market teams to implement strategies enhancing product visibility and driving sales growth.<br/>
+                    • Conducted data analysis using SQL, R, and Python, supporting key business decision-making processes.<br/>
+                    • Developed automated dashboards and reports for real-time tracking of diverse KPIs.<br/>
+                    • Collaborated with stakeholders to translate business requirements into technical specifications.<br/>
+                    • Conducted A/B tests and multivariate analysis to optimize customer journeys and increase conversion rates.<br/>
+                    • Provided analytical support for various business initiatives, contributing to a 10% increase in customer retention.
+                </p>
+                <p>Skills: Critical Thinking, Data Visualization, VBA Excel, Microsoft Azure, Financial Analysis, R, SQL, Data Analytics, Operations Management, Technical Product Management, Data Analysis, Agile Methodologies, Databases, Python, Product Management, Tableau</p>
+            </div>
+
+            <!-- Experience 5 -->
+            <div class="timeline-item">
+                <h3>Outgoing Global Entrepreneur</h3>
+                <p class="date-location">Jul 2019 - Nov 2019 · 5 mos<br/>AIESEC in India · Internship · Hyderabad, Telangana, India</p>
+                <p>
+                    • Obtained willing students to work as interns in startups mainly in Egypt, Singapore, and China, enhancing sales experience.<br/>
+                    • Served on the Core Committee of the July National Conference and was the Vice President of Sponsorships.
+                </p>
+            </div>
+
+            <!-- Experience 6 -->
+            <div class="timeline-item">
+                <h3>Sales Executive</h3>
+                <p class="date-location">Feb 2019 - Jun 2019 · 5 mos<br/>Offerwaale · Internship · Hyderabad, Telangana, India</p>
+                <p>
+                    • Contributed to a 25% growth of Offerwaale, a startup providing coupon books for hotels and restaurants around the city.<br/>
+                    • Secured 50 new partnerships through effective cold calling and persuasive sales pitches.<br/>
+                    • Brought in new clientele from restaurants and hotels through efficient communication and relationship building.<br/>
+                    • Synthesized information into comprehensive documents, showcasing a 15% boost in sales.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" data-aos="fade-up">
+            <h2>Get in Touch</h2>
+            <p>If you would like to discuss opportunities or have any questions, feel free to reach out to me.</p>
+            <a href="mailto:namanjain1618@gmail.com" class="email-button">Contact Me</a>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Slick Carousel -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Custom Scripts -->
+    <script>
+        // Preloader
+        $(window).on('load', function() {
+            $('#preloader').fadeOut('slow');
+        });
+
+        // AOS Initialization
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Smooth Scrolling
+        $(document).ready(function(){
+            $('nav a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70 // adjust for fixed nav height
+                    }, 1000);
+                }
+            });
+
+            // Back to Top Button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            $('#back-to-top').click(function() {
+                $('html, body').animate({scrollTop : 0},800);
+                return false;
+            });
+
+            // Skill Progress Bars
+            $('.progress-bar').each(function(){
+                var percentage = $(this).data('percentage');
+                $(this).css('width', percentage);
+            });
+
+            // Testimonials Carousel
+            $('.testimonial-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 5000,
+            });
+
+            // Contact Form Validation (Removed form as per request)
+        });
+    </script>
+</body>
+</html>
